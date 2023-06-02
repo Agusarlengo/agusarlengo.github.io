@@ -36,11 +36,11 @@ function calcularCapital() {
                            capital20000 + capital10000 + capital5000 +
                            capital2000 + capital1000 + capital500 +
                            capital200 + capital100;
-    var capitalInicial = parseInt(document.getElementById("capitalInicial").value) || 0;
-    var beneficio = capitalExistente - capitalInicial;
+    var capitalInicial = parseInt(document.getElementById("capitalInicial").value) || 0; 
     var capitalFijo = parseInt(document.getElementById("capitalFijo").value) || 0;
     var cajaEmpleados = parseInt(document.getElementById("cajaEmpleados").value) || 0;
-    var existenciaTotal = capitalExistente + capitalFijo;   
+    var existenciaTotal = capitalExistente + capitalFijo; 
+    var beneficio = existenciaTotal - capitalInicial;  
     var resultado = document.getElementById("resultado");
             resultado.innerHTML = "Nombre del Pagador: " + nombrePagador + "<br>" +
                                   "Legajo del Pagador: " + legajoPagador + "<br>" +
@@ -48,7 +48,8 @@ function calcularCapital() {
                                   "Legajo del Jefe: " + legajoJefe + "<br>" +
                                   "Fecha: " + fecha + "<br>" +
                                   "Hora: " + hora + "<br>" +
-                                  "Número de Mesa: " + mesa + "<br>" +                                 "Juego: " + juego + "<br>" +
+                                  "Número de Mesa: " + mesa + "<br>" +                                 
+                                  "Juego: " + juego + "<br>" +
                                   "Capital Existente: " + capitalExistente + "<br>" +
                                   "Capital Fijo: " + capitalFijo + "<br>" + 
                                   "Recaudación C.E.: " + cajaEmpleados + "<br>" +
@@ -60,10 +61,11 @@ function calcularCapital() {
                                   if (beneficio > 0) {
                                       beneficioElemento.className = "beneficio-verde";
                                       beneficioElemento.innerHTML = "Beneficio de la Mesa: " + beneficio
-                                  } else {
+                                  } else if (beneficio < 0){
                                       beneficioElemento.className = "quebranto-rojo";
-                                      beneficioElemento.innerHTML = "Quebranto de la Mesa: " + beneficio;
-                                  }     
+                                      beneficioElemento.innerHTML = "Quebranto de la Mesa: " + beneficio}
+                                  else
+                                    {beneficioElemento.innerHTML = "La mesa no gana ni pierde"}    
                                       
                                   function enviar() {
                                     // Obtener los valores de los campos del formulario
@@ -114,5 +116,4 @@ function calcularCapital() {
                                         linkElement.target = "_blank";
                                         linkElement.download = "arqueo_de_mesa.pdf";
                                         linkElement.click();}
-} 
-}
+} }

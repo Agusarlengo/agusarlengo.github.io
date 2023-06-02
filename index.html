@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cierre de mesas</title>
+    <title>Cierre Liquidación Final</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
@@ -13,7 +13,7 @@
         
     </header>
     <body>
-        <h1>Cierre de Mesas </h1>
+        <h1>Cierre Liquidación Final - Casino Pinamar </h1>
         <form class="form" id="formulario">
             <label for="nombrePagador">Nombre del Pagador:</label>
             <input type="text" id="nombrePagador" required>
@@ -47,8 +47,8 @@
             </select>
     <div id="separador"></div>
 
-            <h2>Detalle de Fichas</h2>
-        
+            <h2>Detalle de Fichas en Mesa</h2>
+        <div class="detalle">
         <form class="form" id="formulario">
             <label for="ficha500000"> Fichas de 500,000:</label>
             <input type="number" id="ficha500000" min="0">
@@ -91,7 +91,7 @@
 
             <label for="cajaEmpleados">Recaudación C.E.:</label>
             <input type="number" id="cajaEmpleados" min="0">
-
+        </div>
           <div class="botones"> 
             <button class="boton" type="button" onclick="calcularCapital()">Calcular</button>
             <input class="boton" type="reset" value="Reset">
@@ -105,8 +105,10 @@
     
         
     </body>
-    <footer><img src="logo.png">  <p class="copy">&copy;Copyright 2023 - Pinamar</p>
-        </footer>
+    <footer class="footer">
+        <img class="footer-logo" src="logo.png" alt="Logo Casinos de la Provincia">
+        <p>© Casino Pinamar 2023</p>
+      </footer>
  
     </html>
     
